@@ -11,8 +11,17 @@ public class EmployeePayRoll {
         this.id = id;
     }
 
+    public EmployeePayRoll(int id, String name, long salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public EmployeePayRoll() {
     }
 
     @Override

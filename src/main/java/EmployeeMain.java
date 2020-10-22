@@ -1,3 +1,5 @@
+import java.io.*;
+import java.nio.file.*;
 import java.util.*;
 
 public class EmployeeMain {
@@ -24,12 +26,40 @@ public class EmployeeMain {
             System.out.println("Employee Salary: "+e.getSalary());
         }
     }
+    public Boolean writeFile() {
+        try {
+            Scanner sc=new Scanner(System.in);
+            EmployeePayRoll e=new EmployeePayRoll();
+            Path p=Paths.get("C:\\Users\\Latha r rao\\Intellij\\EmployeePayRoll\\EmpData\\DATA.txt");
+            StringBuffer s=new StringBuffer();
+            for (EmployeePayRoll z : arr) {
+                String x = z.toString()+"\n";
+                s.append(x);
+            }
+            Files.write(p,s.toString().getBytes());
+            return true;
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public long countEntries()
+    {
+        long count=0;
+        {
+            Path p=Paths.get("C:\\Users\\Latha r rao\\Intellij\\EmployeePayRoll\\EmpData\\DATA.txt");
+            try {
+                count=Files.lines(p).count();
+                return count;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return 0;
+    }
 
     public static void main(String[] args) {
-        EmployeeMain e=new EmployeeMain();
-        System.out.println("READING INPUT FROM CONSOLE");
-        e.readDetails();
-        System.out.println("WRITING DATA TO CONSOLE");
-        e.writeDetails();
+
     }
 }
