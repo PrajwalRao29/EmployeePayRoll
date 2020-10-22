@@ -14,7 +14,7 @@ public class FileIO {
     public void createFile() {
         IntStream.range(1, 10).forEach(c ->
         {
-            Path path = Paths.get("C:\\Users\\Latha r rao\\Intellij\\EmployeePayRoll\\EmpData" + "\\temp" + c);
+            Path path = Paths.get("C:\\Users\\Latha r rao\\Intellij\\EmployeePayRoll\\EmpData" + "\\temp" + c+".txt");
             try {
                 Files.createFile(path);
             } catch (IOException e) {
@@ -24,7 +24,7 @@ public class FileIO {
     }
 
     public boolean createDirectory() {
-        Path path = Paths.get("C:\\Users\\Latha r rao\\Intellij\\EmployeePayRoll\\EmpData");
+        Path path = Paths.get("C:\\Users\\Latha r rao\\Intellij\\EmployeePayRoll\\EmpData\\NewDirectory");
         try {
             Files.createDirectory(path);
             return true;

@@ -15,6 +15,10 @@ public class EmployeePayRoll {
         return name;
     }
 
+    @Override
+    public String toString() {
+        return "id= " + id + ", name= " + name + ", salary= " + salary;
+    }
 
     public void setName(String name) {
         this.name = name;
