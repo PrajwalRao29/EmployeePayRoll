@@ -44,6 +44,19 @@ public class EmployeeMain {
             return false;
         }
     }
+    public void readFile(){
+        try{
+            FileReader f = new FileReader("C:\\Users\\Latha r rao\\Intellij\\EmployeePayRoll\\EmpData\\DATA.txt");
+            int i;
+            while((i=f.read())!=-1)
+                System.out.print((char)i);
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     public long countEntries()
     {
         long count=0;
